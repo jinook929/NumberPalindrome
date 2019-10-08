@@ -21,23 +21,22 @@ public class NumberPalindrome {
         number = originalNumber;
         System.out.println("original number = " + number);
 
-        // Create reverse number
-        for (int i = 0; i < counter; i++) {
-            int lastDigit = number % 10;
-            reverseNumber = reverseNumber * 10 + lastDigit;
-            number /= 10;
-        }
-        System.out.println("reverse number = " + reverseNumber);
-
-
 //        // Create reverse number
 //        for (int i = 0; i < counter; i++) {
-//            int power = counter - (i + 1);
-//            reverseNumber = reverseNumber + (number % 10) * ((int) Math.pow(10, power));
-//            System.out.println(number % 10);
+//            int lastDigit = number % 10;
+//            reverseNumber = reverseNumber * 10 + lastDigit;
 //            number /= 10;
 //        }
 //        System.out.println("reverse number = " + reverseNumber);
+
+
+        // Create reverse number
+        for (int i = 0; i < counter; i++) {
+            int power = counter - (i + 1);
+            reverseNumber = reverseNumber + (number % 10) * ((int) Math.pow(10, power));
+            number /= 10;
+        }
+        System.out.println("reverse number = " + reverseNumber);
 
         if (originalNumber == reverseNumber) {
             return true;
